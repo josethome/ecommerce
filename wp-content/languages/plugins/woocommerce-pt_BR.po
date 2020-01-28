@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-11-19 20:34:49+0000\n"
+"PO-Revision-Date: 2020-01-27 19:54:35+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,112 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: pt_BR\n"
 "Project-Id-Version: Plugins - WooCommerce - Stable (latest release)\n"
+
+#. translators: %s is a step number (1, 2, 3...)
+#: packages/woocommerce-blocks/assets/js/base/components/checkout/form-step/index.js:20
+msgid "Step %d"
+msgstr "Passo %d"
+
+#: packages/woocommerce-blocks/build/price-filter.js:1
+#: packages/woocommerce-blocks/assets/js/blocks/price-filter/edit.js:84
+msgid "Results will update when the slider is moved."
+msgstr "Os resultados serão atualizados quando o controle deslizante for movido."
+
+#: packages/woocommerce-blocks/build/price-filter.js:1
+#: packages/woocommerce-blocks/assets/js/blocks/price-filter/edit.js:80
+msgid "Results will only update when the button is pressed."
+msgstr "Os resultados serão atualizados apenas quando o botão for pressionado."
+
+#: packages/woocommerce-blocks/build/price-filter.js:1
+#: packages/woocommerce-blocks/assets/js/blocks/price-filter/edit.js:74
+msgid "Filter button"
+msgstr "Botão de filtro"
+
+#: packages/woocommerce-blocks/build/price-filter.js:1
+#: packages/woocommerce-blocks/assets/js/blocks/price-filter/edit.js:53
+msgid "Editable"
+msgstr "Editável"
+
+#: packages/woocommerce-blocks/build/price-filter.js:1
+#: packages/woocommerce-blocks/assets/js/blocks/price-filter/edit.js:46
+msgid "Price Range"
+msgstr "Intervalo de preço"
+
+#: packages/woocommerce-blocks/build/price-filter.js:1
+#: packages/woocommerce-blocks/assets/js/blocks/price-filter/edit.js:130
+msgid "Products with prices are needed for filtering by price. You haven't created any products yet."
+msgstr "Produtos com preços são necessários para filtrar por preço. Você ainda não criou nenhum produto."
+
+#: packages/woocommerce-blocks/build/price-filter-frontend.js:6
+#: packages/woocommerce-blocks/build/price-filter.js:1
+#: packages/woocommerce-blocks/assets/js/base/components/price-slider/price-input.js:28
+#: packages/woocommerce-blocks/assets/js/base/components/price-slider/index.js:290
+msgid "Filter products by maximum price"
+msgstr "Filtrar produtos por preço máximo"
+
+#: packages/woocommerce-blocks/build/price-filter-frontend.js:6
+#: packages/woocommerce-blocks/build/price-filter.js:1
+#: packages/woocommerce-blocks/assets/js/base/components/price-slider/price-input.js:15
+#: packages/woocommerce-blocks/assets/js/base/components/price-slider/index.js:271
+msgid "Filter products by minimum price"
+msgstr "Filtrar produtos por preço mínimo"
+
+#. translators: %s: low price, %s: high price.
+#: packages/woocommerce-blocks/build/price-filter-frontend.js:6
+#: packages/woocommerce-blocks/build/price-filter.js:1
+#: packages/woocommerce-blocks/assets/js/base/components/price-slider/price-label.js:15
+msgid "Price: %s — %s"
+msgstr "Preço: %s — %s"
+
+#: packages/woocommerce-blocks/build/all-products.js:1
+#: packages/woocommerce-blocks/assets/js/atomic/blocks/product/sale-badge/index.js:16
+msgid "Displays an on-sale badge if the product is on-sale."
+msgstr "Exibe um selo indicando promoção se o produto estiver com promoção."
+
+#: packages/woocommerce-blocks/build/all-products.js:1
+#: packages/woocommerce-blocks/assets/js/atomic/blocks/product/sale-badge/index.js:15
+msgid "On-Sale Badge"
+msgstr "Selo de promoção"
+
+#: packages/woocommerce-blocks/build/all-products.js:1
+#: packages/woocommerce-blocks/assets/js/atomic/blocks/product/summary/index.js:16
+msgid "Display the short description of a product."
+msgstr "Exiba a breve descrição de um produto."
+
+#: packages/woocommerce-blocks/build/all-products.js:1
+#: packages/woocommerce-blocks/assets/js/atomic/blocks/product/summary/index.js:15
+msgid "Product Summary"
+msgstr "Sumario de produtos"
+
+#: packages/woocommerce-blocks/build/all-products.js:1
+#: packages/woocommerce-blocks/assets/js/atomic/blocks/product/button/index.js:17
+msgid "Display a call to action button which either adds the product to the cart, or links to the product page."
+msgstr "Exiba um botão depara adicionar o produto ao carrinho ou faça links para a página do produto."
+
+#: packages/woocommerce-blocks/build/all-products.js:1
+#: packages/woocommerce-blocks/assets/js/atomic/blocks/product/button/index.js:16
+msgid "Product Button"
+msgstr "Botão do produto"
+
+#: packages/woocommerce-blocks/build/all-products.js:1
+#: packages/woocommerce-blocks/assets/js/atomic/blocks/product/rating/index.js:16
+msgid "Display the average rating of a product."
+msgstr "Exibe a classificação média de um produto."
+
+#: packages/woocommerce-blocks/build/all-products.js:1
+#: packages/woocommerce-blocks/assets/js/atomic/blocks/product/rating/index.js:15
+msgid "Product Rating"
+msgstr "Classificação do produto"
+
+#: packages/woocommerce-blocks/build/all-products.js:1
+#: packages/woocommerce-blocks/assets/js/atomic/blocks/product/image/index.js:108
+msgid "Center"
+msgstr "Centro"
+
+#: packages/woocommerce-blocks/build/all-products.js:1
+#: packages/woocommerce-blocks/assets/js/atomic/blocks/product/image/index.js:94
+msgid "Sale Badge Alignment"
+msgstr "Alinhamento do selo de promoção"
 
 #: packages/woocommerce-blocks/build/reviews-by-category.js:1
 #: packages/woocommerce-blocks/build/reviews-by-category-legacy.js:1
@@ -2076,6 +2182,12 @@ msgstr "O botão \"Adicionar ao carrinho\" é visível."
 #: packages/woocommerce-blocks/assets/js/blocks/product-tag/index.js:26
 msgid "Display a grid of products from your selected tags."
 msgstr "Exibe uma grade de produtos com base em tags selecionadas."
+
+#: packages/woocommerce-blocks/build/product-categories-legacy.js:1
+#: packages/woocommerce-blocks/build/product-categories.js:1
+#: packages/woocommerce-blocks/assets/js/blocks/product-categories/block.js:21
+msgid "This block shows product categories for your store. To use it, you'll first need to create a product and assign it to a category."
+msgstr "Este bloco mostra categorias de produtos da sua loja. Para usá-lo, primeiro você precisa criar um produto e atribuí-lo a uma categoria."
 
 #: packages/woocommerce-blocks/build/product-tag.js:1
 #: packages/woocommerce-blocks/build/product-tag-legacy.js:1
@@ -4811,6 +4923,10 @@ msgstr "Certifique-se de que os resultados excluem avaliações atribuídas a ID
 #: packages/woocommerce-rest-api/src/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1409
 msgid "Shipping instance ID."
 msgstr "ID de instância de entrega."
+
+#: packages/woocommerce-blocks/src/RestApi/StoreApi/Controllers/Products.php:231
+msgid "Limit response to resources created after a given ISO8601 compliant date."
+msgstr "Limitar resposta para recursos publicados depois de uma data especifica no formato ISO8601. "
 
 #. Translators: %s URL to erasure request screen.
 #: includes/admin/settings/class-wc-settings-accounts.php:104
@@ -17520,6 +17636,14 @@ msgstr "Produtos bem avaliados"
 msgid "Please enter a valid account username."
 msgstr "Informe um nome de usuário válido."
 
+#: packages/woocommerce-blocks/build/all-products-frontend.js:6
+#: packages/woocommerce-blocks/build/all-products.js:1
+#: packages/woocommerce-blocks/assets/js/base/components/product-list/no-products.js:14
+#: packages/woocommerce-blocks/assets/js/base/components/product-list/no-products.js:20
+#: packages/woocommerce-blocks/assets/js/base/components/product-list/no-matching-products.js:14
+msgid "No products"
+msgstr "Nenhum produto encontrado"
+
 #: includes/class-wc-product-variable.php:60
 msgid "Select options"
 msgstr "Ver opções"
@@ -23452,6 +23576,10 @@ msgid_plural "%d webhooks permanently deleted."
 msgstr[0] "%d webhook excluído permanentemente."
 msgstr[1] "%d webhooks excluídos permanentemente."
 
+#: includes/admin/meta-boxes/class-wc-meta-box-order-actions.php:65
+msgid "Move to Trash"
+msgstr "Mover para lixeira"
+
 #: includes/admin/class-wc-admin-taxonomies.php:323
 msgid "Product categories for your store can be managed here. To change the order of categories on the front-end you can drag and drop to sort them. To see more categories listed click the \"screen options\" link at the top-right of this page."
 msgstr "As categorias de produtos da sua loja podem ser gerenciadas aqui. Para alterar a ordem das categorias na frente do site você pode arrastar e soltá-los. Para ver mais categorias clique em \"opções de tela\" no topo da página."
@@ -25781,6 +25909,11 @@ msgstr "Base das categorias de produtos"
 #: includes/admin/class-wc-admin-attributes.php:390
 msgid "Unique slug/reference for the attribute; must be no more than 28 characters."
 msgstr "Slug/referência exclusiva para o atributo; pode ter no máximo 28 dígitos."
+
+#. translators: %s: price decimal separator
+#: includes/admin/class-wc-admin-assets.php:174
+msgid "Please enter with one monetary decimal point (%s) without thousand separators and currency symbols."
+msgstr "Digite o valor inserindo um ponto decimal monetário (%s) sem milhares de separadores e símbolos da moeda."
 
 #: i18n/states.php:943
 msgid "Albay"

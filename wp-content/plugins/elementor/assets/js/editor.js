@@ -1,4 +1,4 @@
-/*! elementor - v2.8.4 - 19-01-2020 */
+/*! elementor - v2.8.5 - 27-01-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -5318,7 +5318,7 @@ var _helpers = _interopRequireDefault(__webpack_require__(109));
 
 var ControlsCSSParser = __webpack_require__(222),
     Validator = __webpack_require__(203),
-    BaseContainer = __webpack_require__(241),
+    BaseContainer = __webpack_require__(242),
     BaseElementView;
 
 BaseElementView = BaseContainer.extend({
@@ -7805,6 +7805,27 @@ var _keys = _interopRequireDefault(__webpack_require__(27));
 
 "use strict";
 
+// 22.1.3.9 Array.prototype.findIndex(predicate, thisArg = undefined)
+var $export = __webpack_require__(29);
+var $find = __webpack_require__(117)(6);
+var KEY = 'findIndex';
+var forced = true;
+// Shouldn't skip holes
+if (KEY in []) Array(1)[KEY](function () { forced = false; });
+$export($export.P + $export.F * forced, 'Array', {
+  findIndex: function findIndex(callbackfn /* , that = undefined */) {
+    return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+__webpack_require__(73)(KEY);
+
+
+/***/ }),
+/* 242 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 var _interopRequireDefault = __webpack_require__(0);
 
@@ -7936,7 +7957,7 @@ module.exports = Marionette.CompositeView.extend({
 });
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8180,28 +8201,7 @@ var _default = AddSectionBase;
 exports.default = _default;
 
 /***/ }),
-/* 243 */,
-/* 244 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// 22.1.3.9 Array.prototype.findIndex(predicate, thisArg = undefined)
-var $export = __webpack_require__(29);
-var $find = __webpack_require__(117)(6);
-var KEY = 'findIndex';
-var forced = true;
-// Shouldn't skip holes
-if (KEY in []) Array(1)[KEY](function () { forced = false; });
-$export($export.P + $export.F * forced, 'Array', {
-  findIndex: function findIndex(callbackfn /* , that = undefined */) {
-    return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
-  }
-});
-__webpack_require__(73)(KEY);
-
-
-/***/ }),
+/* 244 */,
 /* 245 */,
 /* 246 */,
 /* 247 */
@@ -9697,7 +9697,7 @@ var _get2 = _interopRequireDefault(__webpack_require__(28));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(6));
 
-var _base = _interopRequireDefault(__webpack_require__(242));
+var _base = _interopRequireDefault(__webpack_require__(243));
 
 var AddSectionView =
 /*#__PURE__*/
@@ -19372,7 +19372,7 @@ module.exports = Marionette.ItemView.extend({
 
 var _interopRequireDefault = __webpack_require__(0);
 
-__webpack_require__(244);
+__webpack_require__(241);
 
 __webpack_require__(15);
 
@@ -21091,6 +21091,7 @@ function (_ControlMultipleBaseI) {
       ui.deleteButton = 'media' === skin ? '.elementor-control-media__remove' : '.elementor-control-icons--inline__none';
       ui.previewPlaceholder = '.elementor-control-media__preview';
       ui.previewContainer = '.elementor-control-preview-area';
+      ui.inlineIconContainer = '.elementor-control-inline-icon';
       ui.inlineDisplayedIcon = '.elementor-control-icons--inline__displayed-icon';
       ui.radioInputs = '[type="radio"]';
       return ui;
@@ -21183,7 +21184,10 @@ function (_ControlMultipleBaseI) {
 
       // is migration allowed from fa4
       if (!this.isMigrationAllowed()) {
-        this.ui.previewContainer[0].addEventListener('click', function (event) {
+        var migrationPopupTrigger = 'media' === this.model.get('skin') ? this.ui.previewContainer[0] : this.ui.inlineIconContainer[0];
+        migrationPopupTrigger.addEventListener('click', function (event) {
+          // Prevent default to prevent marking the inline icons as selected on click when migration is not allowed
+          event.preventDefault();
           event.stopPropagation();
 
           var onConfirm = function onConfirm() {
@@ -25911,7 +25915,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(4));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(6));
 
-var _base = _interopRequireDefault(__webpack_require__(242));
+var _base = _interopRequireDefault(__webpack_require__(243));
 
 var AddSectionView =
 /*#__PURE__*/
@@ -26061,7 +26065,7 @@ exports.default = _default;
 __webpack_require__(15);
 
 var SectionView = __webpack_require__(178),
-    BaseContainer = __webpack_require__(241),
+    BaseContainer = __webpack_require__(242),
     BaseSectionsContainerView;
 
 BaseSectionsContainerView = BaseContainer.extend({

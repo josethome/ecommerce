@@ -1,4 +1,4 @@
-/*! elementor - v2.8.4 - 19-01-2020 */
+/*! elementor - v2.8.5 - 27-01-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -4830,7 +4830,7 @@ var _helpers = _interopRequireDefault(__webpack_require__(109));
 
 var ControlsCSSParser = __webpack_require__(222),
     Validator = __webpack_require__(203),
-    BaseContainer = __webpack_require__(241),
+    BaseContainer = __webpack_require__(242),
     BaseElementView;
 
 BaseElementView = BaseContainer.extend({
@@ -6713,6 +6713,27 @@ var _keys = _interopRequireDefault(__webpack_require__(27));
 
 "use strict";
 
+// 22.1.3.9 Array.prototype.findIndex(predicate, thisArg = undefined)
+var $export = __webpack_require__(29);
+var $find = __webpack_require__(117)(6);
+var KEY = 'findIndex';
+var forced = true;
+// Shouldn't skip holes
+if (KEY in []) Array(1)[KEY](function () { forced = false; });
+$export($export.P + $export.F * forced, 'Array', {
+  findIndex: function findIndex(callbackfn /* , that = undefined */) {
+    return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+__webpack_require__(73)(KEY);
+
+
+/***/ }),
+/* 242 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 var _interopRequireDefault = __webpack_require__(0);
 
@@ -6844,7 +6865,7 @@ module.exports = Marionette.CompositeView.extend({
 });
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7088,7 +7109,7 @@ var _default = AddSectionBase;
 exports.default = _default;
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7136,27 +7157,6 @@ function (_Base) {
 }(_base.default);
 
 exports.default = After;
-
-/***/ }),
-/* 244 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// 22.1.3.9 Array.prototype.findIndex(predicate, thisArg = undefined)
-var $export = __webpack_require__(29);
-var $find = __webpack_require__(117)(6);
-var KEY = 'findIndex';
-var forced = true;
-// Shouldn't skip holes
-if (KEY in []) Array(1)[KEY](function () { forced = false; });
-$export($export.P + $export.F * forced, 'Array', {
-  findIndex: function findIndex(callbackfn /* , that = undefined */) {
-    return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
-  }
-});
-__webpack_require__(73)(KEY);
-
 
 /***/ }),
 /* 245 */
@@ -7634,7 +7634,7 @@ var _get2 = _interopRequireDefault(__webpack_require__(28));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(6));
 
-var _base = _interopRequireDefault(__webpack_require__(242));
+var _base = _interopRequireDefault(__webpack_require__(243));
 
 var AddSectionView =
 /*#__PURE__*/
@@ -9531,25 +9531,26 @@ function (_History) {
   }, {
     key: "apply",
     value: function apply(args) {
-      var previewContainer = elementor.getPreviewContainer(),
-          data = args.data,
+      var data = args.data,
           _args$options = args.options,
           options = _args$options === void 0 ? args.options || {} : _args$options,
-          _args$at = args.at,
-          at = _args$at === void 0 ? isNaN(options.at) ? previewContainer.view.collection.length : options.at : _args$at; // Each `data.content`.
+          previewContainer = elementor.getPreviewContainer(),
+          result = [];
+      var at = isNaN(options.at) ? previewContainer.view.collection.length : options.at; // Each `data.content`.
 
       (0, _entries.default)(data.content).forEach(function (_ref) {
         var _ref2 = (0, _slicedToArray2.default)(_ref, 2),
             index = _ref2[0],
             model = _ref2[1];
 
-        $e.run('document/elements/create', {
+        result.push($e.run('document/elements/create', {
           container: elementor.getPreviewContainer(),
           model: model,
-          options: (0, _assign.default)({
-            at: at + index
-          }, options)
-        });
+          options: (0, _assign.default)(options, {
+            at: at
+          })
+        }));
+        at++;
       });
 
       if (options.withPageSettings) {
@@ -9561,6 +9562,8 @@ function (_History) {
           }
         });
       }
+
+      return result;
     }
   }]);
   return Import;
@@ -12105,7 +12108,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(4));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(6));
 
-var _after = _interopRequireDefault(__webpack_require__(243));
+var _after = _interopRequireDefault(__webpack_require__(244));
 
 var ColumnIsPopulated =
 /*#__PURE__*/
@@ -12252,7 +12255,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(4));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(6));
 
-var _after = _interopRequireDefault(__webpack_require__(243));
+var _after = _interopRequireDefault(__webpack_require__(244));
 
 var CreateSectionIsFull =
 /*#__PURE__*/
@@ -12364,7 +12367,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(4));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(6));
 
-var _after = _interopRequireDefault(__webpack_require__(243));
+var _after = _interopRequireDefault(__webpack_require__(244));
 
 var ColumnIsEmpty =
 /*#__PURE__*/
@@ -12446,7 +12449,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(4));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(6));
 
-var _after = _interopRequireDefault(__webpack_require__(243));
+var _after = _interopRequireDefault(__webpack_require__(244));
 
 var DeleteSectionIsFull =
 /*#__PURE__*/
@@ -12567,7 +12570,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(4));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(6));
 
-var _after = _interopRequireDefault(__webpack_require__(243));
+var _after = _interopRequireDefault(__webpack_require__(244));
 
 var ColumnChangeSize =
 /*#__PURE__*/
@@ -12640,7 +12643,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(4));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(6));
 
-var _after = _interopRequireDefault(__webpack_require__(243));
+var _after = _interopRequireDefault(__webpack_require__(244));
 
 var Draggable =
 /*#__PURE__*/
@@ -12715,7 +12718,7 @@ var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(4));
 
 var _inherits2 = _interopRequireDefault(__webpack_require__(6));
 
-var _after = _interopRequireDefault(__webpack_require__(243));
+var _after = _interopRequireDefault(__webpack_require__(244));
 
 var Resizeable =
 /*#__PURE__*/
@@ -13120,7 +13123,7 @@ exports.default = exports.Paste = void 0;
 
 var _values = _interopRequireDefault(__webpack_require__(111));
 
-__webpack_require__(244);
+__webpack_require__(241);
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(2));
 
